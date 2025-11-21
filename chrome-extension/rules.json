@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "Origin", "operation": "set", "value": "https://web.whatsapp.com" },
+        { "header": "Referer", "operation": "set", "value": "https://web.whatsapp.com/" }
+      ],
+      "responseHeaders": [
+        { "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*" },
+        { "header": "Access-Control-Allow-Methods", "operation": "set", "value": "GET, POST, OPTIONS" },
+        { "header": "Access-Control-Allow-Headers", "operation": "set", "value": "Content-Type, Authorization" },
+        { "header": "Cross-Origin-Embedder-Policy", "operation": "remove" },
+        { "header": "Cross-Origin-Opener-Policy", "operation": "remove" }
+      ]
+    },
+    "condition": {
+      "urlFilter": "https://api-inference.huggingface.co/*",
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        { "header": "Cross-Origin-Embedder-Policy", "operation": "remove" },
+        { "header": "Cross-Origin-Opener-Policy", "operation": "remove" }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*://web.whatsapp.com/*",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

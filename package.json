@@ -1,0 +1,26 @@
+{
+  "name": "emotion-detector",
+  "version": "1.0.0",
+  "description": "A real-time chat application that detects emotions in messages using Natural Language Processing (NLP) and displays corresponding emojis in the navbar.",
+  "type": "module",
+  "main": "test-api.js",
+  "scripts": {
+    "test": "node test-api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandril-mallick/Emotion-Detection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chandril-mallick/Emotion-Detection/issues"
+  },
+  "homepage": "https://github.com/chandril-mallick/Emotion-Detection#readme",
+  "dependencies": {
+    "canvas": "^3.2.0",
+    "dotenv": "^17.2.3",
+    "node-fetch": "^2.7.0"
+  }
+}

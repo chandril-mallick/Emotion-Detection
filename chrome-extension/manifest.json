@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Emotion Detector",
+  "version": "1.0",
+  "description": "Detects and displays emotions in WhatsApp Web chats in real-time using emo_roberta model",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "alarms",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "sidePanel"
+  ],
+  "action": {
+    "default_title": "WhatsApp Emotion Detector",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "host_permissions": [
+    "*://web.whatsapp.com/*",
+    "https://router.huggingface.co/*",
+    "https://api-inference.huggingface.co/*",
+    "https://*.huggingface.co/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src https://api-inference.huggingface.co https://*.huggingface.co https://web.whatsapp.com",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src blob: 'self';"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [{
+    "resources": ["rules.json", ".env"],
+    "matches": ["<all_urls>"]
+  }],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}

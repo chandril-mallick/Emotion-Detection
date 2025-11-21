@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhatsApp Emotion Detector - Settings</title>
+    <style>
+        body {
+            width: 400px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #333;
+        }
+        h1 {
+            color: #128C7E;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #128C7E;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        button:hover {
+            background-color: #0e766b;
+        }
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success {
+            background-color: #e6f7ee;
+            color: #0a5c4e;
+            border: 1px solid #a8e6cf;
+        }
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>WhatsApp Emotion Detector Settings</h1>
+    
+    <div class="section">
+        <h2>API Settings</h2>
+        <div class="form-group">
+            <label for="apiKey">Hugging Face API Key</label>
+            <input type="password" id="apiKey" placeholder="Enter your Hugging Face API key">
+            <small>Get your API key from <a href="https://huggingface.co/settings/tokens" target="_blank">Hugging Face</a></small>
+        </div>
+        <button id="saveSettings">Save Settings</button>
+        <div id="status" class="status"></div>
+    </div>
+
+    <div class="section">
+        <h2>Display Settings</h2>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="showEmojis" checked>
+                Show emojis with emotions
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="enableDarkMode">
+                Enable dark mode
+            </label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Data</h2>
+        <button id="clearCache">Clear Emotion Cache</button>
+        <small>Clears the cache of previously analyzed messages</small>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

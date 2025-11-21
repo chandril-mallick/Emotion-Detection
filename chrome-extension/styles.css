@@ -1,0 +1,55 @@
+/* Style for emotion labels */
+.emotion-label {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background-color: #e6f3ff;
+    color: #128C7E;
+    font-size: 11px;
+    font-weight: 500;
+    vertical-align: middle;
+    opacity: 0.9;
+    white-space: nowrap;
+    cursor: default;
+    transition: all 0.2s ease;
+    border: 1px solid #d0e3ff;
+}
+
+/* Loading state */
+.emotion-label.loading {
+    color: #666;
+    background-color: #f0f0f0;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Error state */
+.emotion-label.error {
+    color: #d32f2f;
+    background-color: #ffebee;
+    border-color: #ffcdd2;
+}
+
+/* Hover effect */
+.emotion-label:not(.loading):not(.error):hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some animation for new emotion labels */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 0.9; transform: translateY(0); }
+}
+
+.emotion-label {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Make sure the message container can handle the new content */
+[data-id*="false"] {
+    position: relative;
+    padding-right: 10px;
+}

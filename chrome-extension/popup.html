@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhatsApp Emotion Detector</title>
+    <style>
+        body {
+            width: 250px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 16px;
+            color: #128C7E;
+            margin: 0 0 15px 0;
+        }
+        .status {
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .active {
+            color: #25D366;
+            font-weight: bold;
+        }
+        .settings {
+            margin-bottom: 15px;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        input:checked + .slider {
+            background-color: #25D366;
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px #25D366;
+        }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        .sidebar-btn {
+            background-color: #25D366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .sidebar-btn:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <h1>WhatsApp Emotion Detector</h1>
+    <div class="status">
+        <p>Extension is active on WhatsApp Web</p>
+    </div>
+    <div class="settings">
+        <label class="switch">
+            <input type="checkbox" id="toggleExtension">
+            <span class="slider round"></span>
+        </label>
+        <span>Enable Emotion Detection</span>
+    </div>
+    <div class="settings">
+        <label class="switch">
+            <input type="checkbox" id="toggleDarkMode">
+            <span class="slider round"></span>
+        </label>
+        <span>Dark Mode</span>
+    </div>
+    <div class="settings">
+        <label class="switch">
+            <input type="checkbox" id="toggleEmojis">
+            <span class="slider round"></span>
+        </label>
+        <span>Show Emojis</span>
+    </div>
+    <div class="settings">
+        <button id="toggleSidebar" class="sidebar-btn">Show Sidebar</button>
+    </div>
+    <div class="settings">
+        <a href="options.html" target="_blank">Settings</a>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Emotion Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            width: 300px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .emotion-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .emotion-item {
+            padding: 8px 12px;
+            margin: 4px 0;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .emotion-emoji {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        .emotion-text {
+            flex-grow: 1;
+        }
+        .emotion-score {
+            color: #666;
+            font-size: 12px;
+        }
+        .no-emotions {
+            color: #666;
+            text-align: center;
+            padding: 16px;
+            font-style: italic;
+        }
+        .clear-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>Emotion Analysis</span>
+        <button id="clearBtn" class="clear-btn">Clear All</button>
+    </div>
+    <div id="emotionList" class="emotion-list">
+        <div class="no-emotions">No emotions detected yet</div>
+    </div>
+
+    <script src="sidebar.js"></script>
+</body>
+</html>
